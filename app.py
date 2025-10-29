@@ -31,7 +31,6 @@ scaled_features = scaler.transform(input_df)
 
 # --- Predict Cluster ---
 if st.button("Predict Cluster"):
-    st.write("Scaled Features:", scaled_features)
     cluster = model.predict(scaled_features)[0]
     st.success(f"🧭 Predicted Customer Cluster: **Cluster {cluster}**")
 
@@ -41,4 +40,5 @@ if st.button("Predict Cluster"):
     elif cluster == 1:
         st.info("Cluster 1: Moderate spenders, occasional online buyers.")
     else:
+
         st.info("Cluster 2: Low spend, high recency customers.")
